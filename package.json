@@ -1,0 +1,11 @@
+{
+  "name": "community-tracker",
+  "version": "1.0.0",
+  "description": "community attendance tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Pratt",
+  "license": "ISC"
+}
