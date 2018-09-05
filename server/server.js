@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser')
 const app = express();
 const CustomerController = require('./CustomerController');
 
@@ -9,13 +10,14 @@ const CustomerController = require('./CustomerController');
 // })
 
 app.use(express.static("dist"));
+app.use(bodyParser.json());
 
-app.get('/add/:name', CustomerController.createCustomer)
+app.post('/api/add', CustomerController.createCustomer)
 
 app.get('/api/customers', CustomerController.getAllCustomers)
 
-app.get('/update', CustomerController.addVisit)
+app.get('/api/update', CustomerController.addVisit)
 
-app.get('/customer/:name', CustomerController.getCustomer)
+app.get('/api/customer/', CustomerController.getCustomer)
 
 app.listen(8080, () => console.log('listening to 8080'));
