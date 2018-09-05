@@ -2,7 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  devtool: 'inline-source-map',
+  entry: [ "@babel/polyfill", "./src/index.js" ],
   mode: "development",
   module: {
     rules: [
@@ -27,8 +28,12 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
+    open: true,
     publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+    hotOnly: true,
+    proxy: {
+    "/api": "http://localhost:8080"
+  },
   },
   plugins: [ new webpack.HotModuleReplacementPlugin() ]
 };

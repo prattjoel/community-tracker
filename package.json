@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "startServ": "nodemon ./server/server.js"
   },
   "proxy": "http://localhost:5000/",
   "author": "Joel Pratt",
@@ -19,13 +20,16 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "nodemon": "^1.18.4",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.7"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "express": "^4.16.3",
+    "mongoose": "^5.2.13",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-hot-loader": "^4.3.6"
